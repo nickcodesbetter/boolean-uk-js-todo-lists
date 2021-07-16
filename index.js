@@ -18,17 +18,33 @@ and inspect the data
   for (let i = 0; i < users.length; i++) {
     const username = users[i].username;
     const id = users[i].id;
-    const city = users[i].city;
+    const name = users[i].name;
+    const city = users[i].address.city;
   
-    const row = `${username} | ${id} ${city}\n`;
+    const row = `${username} | ${id} ${name} ${city}\n`;
   
     message = message + row;
   
     console.log("Iteration #", i + 1);
     console.log("message: ", message);
+
   }
   
-  console.log(message);
+  const useridResponse = prompt(
+    `
+        What is your user ID?
+      `
+  );
+  const userid = parseInt(useridResponse);
+  
+  let id = 0;
+  
+  if (userid === 1) {
+    id = 20;
+  } else if (userid === 2) {
+    id = 43;
+  }
+  console.log("What is your user ID: ", id);
   alert(message);
 
 
