@@ -13,7 +13,7 @@ and inspect the data
 // - Display an alert with the username and all the todos titles that belong to that user 
 
 
-  let message = "";
+  let messageUsers = "";
   
   for (let i = 0; i < users.length; i++) {
     const username = users[i].username;
@@ -23,36 +23,63 @@ and inspect the data
   
     const row = `${username} | ${id} ${name} ${city}\n`;
   
-    message = message + row;
+    messageUsers = messageUsers + row;
   
-    console.log("Iteration #", i + 1);
-    console.log("message: ", message);
+    // console.log("Iteration #", i + 1);
+    // console.log("message: ", messageUsers);
+  }
+
+ alert(messageUsers);
+//   const useridResponse = prompt(
+//     `
+//         What is your user ID?
+      
+//         `
+//   );
+//   const userid = parseInt(useridResponse);
+  
+//   let id = 0;
+  
+//   if (userid === 1) {
+//     id = 20;
+//   } else if (userid === 2) {
+//     id = 43;
+//   }
+//   console.log("What is your user ID: ", id);
+//   alert(id);
+
+const userIdInput = prompt(`Please enter your user ID: `);
+
+const convertedId = parseInt(userIdInput);
+
+console.log(convertedId);
+
+
+let messageTodos = "";
+  
+  for (let i = 0; i < todos.length; i++) {
+    const userId = todos[i].userId;
+    const id = todos[i].id;
+    const title = todos[i].title;
+    const completed = todos[i].completed;
+  
+
+    const row = `${userId} | ${id} ${title} ${completed}\n`;
+  
+    messageTodos = messageTodos + row;
+  
+    // console.log("Iteration #", i + 1);
+    // console.log("message: ", messageTodos);
 
   }
-  
-  const useridResponse = prompt(
-    `
-        What is your user ID?
-      `
-  );
-  const userid = parseInt(useridResponse);
-  
-  let id = 0;
-  
-  if (userid === 1) {
-    id = 20;
-  } else if (userid === 2) {
-    id = 43;
-  }
-  console.log("What is your user ID: ", id);
-  alert(message);
+
+  alert(messageTodos)
 
 
 
+// console.log("users: ", users);
 
-console.log("users: ", users);
-
-console.log("todos: ", todos);
+// console.log("todos: ", todos);
 
 
 
